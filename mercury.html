@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercury - The Swift Planet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      position: relative;
+    }
+
+    .center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .planet-image {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .center-content h1 {
+      color: #00796b;
+      margin-bottom: 15px;
+      font-size: 36px;
+    }
+
+    .center-content p {
+      margin: 10px 0;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .qr-code-box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 30px auto 10px auto;
+      display: inline-block;
+    }
+
+    .qr-code-box img {
+      width: 160px;
+      height: auto;
+    }
+
+    .qr-code-box p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .enter-btn {
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .enter-btn:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-content">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercury" class="planet-image">
+
+    <h1>Mercury - The Swift Planet</h1>
+    <p>
+      Mercury is the smallest planet in our solar system and the one closest to the Sun. Despite its proximity,
+      it’s not the hottest planet due to its lack of a substantial atmosphere. Its surface is rocky and cratered,
+      resembling our Moon. Mercury has very long days and nights, with temperatures that swing dramatically.
+    </p>
+
+    <div class="qr-code-box">
+      <img src="img/mercury.png" alt="QR Code to AR Content">
+      <p>Scan to explore Mercury in Augmented Reality</p>
+    </div>
+
+    <a href="content.html"><button class="enter-btn">Explore More</button></a>
+  </div>
+
+</body>
+</html>

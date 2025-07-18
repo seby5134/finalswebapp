@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar System Planets</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      min-height: 100vh;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      color: #00796b;
+      font-size: 48px;
+      text-align: center;
+    }
+
+    .planet-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .planet {
+      width: 180px;
+      text-align: center;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .planet:hover {
+      transform: scale(1.08);
+    }
+
+    .planet a {
+      text-decoration: none;
+      color: #004d40;
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .planet img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #ffffff;
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .planet a:hover img {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+      border-color: #b2dfdb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click a Planet</h1>
+
+  <div class="planet-grid">
+    <div class="planet">
+      <a href="mercury.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg" alt="Mercury">
+        Mercury
+      </a>
+    </div>
+    <div class="planet">
+      <a href="venus.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg" alt="Venus">
+        Venus
+      </a>
+    </div>
+    <div class="planet">
+      <a href="earth.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Earth">
+        Earth
+      </a>
+    </div>
+    <div class="planet">
+      <a href="mars.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Mars">
+        Mars
+      </a>
+    </div>
+    <div class="planet">
+      <a href="jupiter.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Jupiter">
+        Jupiter
+      </a>
+    </div>
+    <div class="planet">
+      <a href="saturn.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg" alt="Saturn">
+        Saturn
+      </a>
+    </div>
+    <div class="planet">
+      <a href="uranus.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg" alt="Uranus">
+        Uranus
+      </a>
+    </div>
+    <div class="planet">
+      <a href="neptune.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg" alt="Neptune">
+        Neptune
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

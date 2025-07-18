@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main</title>
+  <script src="https://kit.fontawesome.com/a2d9a66c4f.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      position: relative;
+    }
+
+    .weather-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 300px;
+    }
+
+    .weather-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .weather-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .details {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .details p {
+      margin: 5px 0;
+    }
+
+    .center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .center-content h1 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    .center-content p {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .enter-btn {
+      margin-top: 25px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .enter-btn:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Weather Box -->
+  <div class="weather-box" id="weather">
+    <!-- Weather info will be injected here -->
+  </div>
+
+  <!-- Centered Site Intro -->
+  <div class="center-content">
+    <h1>Planets in the Solar System using Augmented Reality</h1>
+    <p>Welcome to our interactive Augmented Reality experience of the Solar System!</p>
+    <p>This site uses modern web technologies and AR to help students visualize the planets in 3D. Simply scan the QR codes on each planet page to see the models in AR right from your phone.</p>
+    <a href="content.html">
+        <button class="enter-btn">Enter</button>
+      </a>
+  </div>
+
+  <script>
+    const apiKey = '5c1b5db57d35379e2062716bd4e7fb05'; // Replace with your valid API key
+    const city = 'Legazpi City';
+
+    function loadWeather() {
+      const weatherDiv = document.getElementById('weather');
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('City not found or invalid API key');
+          }
+          return response.json();
+        })
+        .then(data => {
+          const icon = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+          weatherDiv.innerHTML = `
+            <div class="weather-card">
+              <h2>${data.name}, ${data.sys.country}</h2>
+              <img src="${iconUrl}" alt="Weather Icon" class="weather-icon">
+              <h3>${data.weather[0].description.toUpperCase()}</h3>
+              <p><strong>Temperature:</strong> ${data.main.temp}°C (Feels like ${data.main.feels_like}°C)</p>
+              <div class="details">
+                <p><strong>Min Temp:</strong> ${data.main.temp_min}°C</p>
+                <p><strong>Max Temp:</strong> ${data.main.temp_max}°C</p>
+                <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+                <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
+                <p><strong>Wind:</strong> ${data.wind.speed} m/s, Direction ${data.wind.deg}°</p>
+              </div>
+            </div>
+          `;
+        })
+        .catch(error => {
+          weatherDiv.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+        });
+    }
+
+    // Load weather on page load
+    window.onload = loadWeather;
+  </script>
+
+</body>
+</html>
